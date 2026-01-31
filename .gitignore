@@ -30,3 +30,6 @@ Thumbs.db
 
 # Prisma
 prisma/dev.db
+
+#Project explanation
+PROJECT_EXPLANATION.txt
