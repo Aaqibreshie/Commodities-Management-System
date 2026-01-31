@@ -52,9 +52,9 @@ export default function ProductsPage() {
       return matchesSearch && matchesCategory;
     }) || [];
 
-  const categories = [
-    ...new Set(data?.products?.map((p: any) => p.category) || []),
-  ];
+  const categories = Array.from(
+    new Set(data?.products?.map((p: any) => p.category) || []),
+  ) as string[];
 
   return (
     <ProtectedLayout>
