@@ -1,105 +1,58 @@
-# Commodities Management System
+# 📦 Commodities Management System
 
-A full-stack role-based commodity management application built with modern technologies.
+A role-based Commodities Management System built as a frontend take-home challenge for Slooze, designed to simulate real-world supply chain workflows. The application demonstrates authentication, role-based access control (RBAC), protected routing, and dynamic UI restrictions using modern web technologies.
 
-## Tech Stack
+The system supports two roles—**Manager** and **Store Keeper**—with clearly defined permissions. Managers can access an operational dashboard and manage commodities, while Store Keepers can view and update product inventory. The application also includes UI enhancements such as Light/Dark mode and role-aware navigation.
 
-| Layer    | Technology                                       |
-| -------- | ------------------------------------------------ |
-| Backend  | NestJS, GraphQL, Prisma, SQLite                  |
-| Frontend | Next.js, TypeScript, Tailwind CSS, Apollo Client |
-| Auth     | JWT-based Role-Based Access Control (RBAC)       |
+This project focuses on clean architecture, scalability, and practical RBAC implementation, reflecting how such systems are built in early-stage, production-grade environments.
 
-## Features
+---
 
-- ✅ **Authentication** - Login with email & password (5 pts)
-- ✅ **Dashboard** - Manager-only statistics view (30 pts)
-- ✅ **View Products** - Product listing with search/filter (10 pts)
-- ✅ **Add/Edit Products** - CRUD operations (15 pts)
-- ✅ **Light/Dark Mode** - Theme switching with persistence (15 pts)
-- ✅ **Role-Based Menu** - Dynamic UI based on user role (25 pts bonus)
+## 🚀 Features
 
-## Role-Based Access
+- ✅ Email & password authentication (mocked)
+- ✅ Role-Based Access Control (Manager / Store Keeper)
+- ✅ Protected routes and role guards
+- ✅ Manager-only dashboard with commodity insights
+- ✅ View, add, and edit commodities
+- ✅ Role-based UI and menu restrictions
+- ✅ Light/Dark theme with persistence
+- ✅ Responsive UI using Tailwind CSS
 
-| Feature           | Manager | Store Keeper |
-| ----------------- | :-----: | :----------: |
-| Login             |   ✅    |      ✅      |
-| Dashboard         |   ✅    |      ❌      |
-| View Products     |   ✅    |      ✅      |
-| Add/Edit Products |   ✅    |      ✅      |
+---
 
-## Getting Started
+## 🛠 Tech Stack
 
-### Prerequisites
+| Layer        | Technology                        |
+| ------------ | --------------------------------- |
+| Frontend     | Next.js, TypeScript, Tailwind CSS |
+| State & Data | Apollo Client, GraphQL (mocked)   |
+| Auth         | Role-Based Access Control (RBAC)  |
+| Styling      | Tailwind CSS with Dark Mode       |
 
-- Node.js 18+
-- npm
+---
 
-### Backend Setup
+## 🧠 Assumptions
 
-```bash
-cd backend
-npm install
-npx prisma generate
-npx prisma db push
-npx ts-node prisma/seed.ts
-npm run start:dev
-```
+- Backend APIs are mocked for demonstration purposes.
+- Authentication is simulated using sample credentials.
+- Role enforcement is handled at both routing and UI levels.
+- Sample data is used to represent realistic commodity inventory.
 
-### Frontend Setup
+---
+
+## ▶️ Run Locally
 
 ```bash
-cd frontend
 npm install
 npm run dev
 ```
 
-### Access
+---
 
-- Frontend: http://localhost:3000
-- Backend GraphQL: http://localhost:4000/graphql
+## 🔐 Sample Credentials
 
-## Demo Credentials
-
-| Role         | Email            | Password    |
-| ------------ | ---------------- | ----------- |
-| Manager      | manager@test.com | password123 |
-| Store Keeper | keeper@test.com  | password123 |
-
-## Project Structure
-
-```
-Assessment/
-├── backend/                 # NestJS + GraphQL + Prisma
-│   ├── prisma/              # Database schema & seed
-│   └── src/
-│       ├── auth/            # Authentication module
-│       ├── products/        # Products CRUD
-│       ├── dashboard/       # Statistics (Manager only)
-│       └── common/          # Guards & decorators
-│
-└── frontend/                # Next.js + TypeScript + Tailwind
-    └── src/
-        ├── app/             # Pages (login, dashboard, products)
-        ├── components/      # Navbar, ProtectedLayout
-        ├── context/         # Auth & Theme contexts
-        └── lib/             # Apollo client
-```
-
-## Screenshots
-
-### Login Page
-
-Premium login with demo credentials display and theme toggle.
-
-### Dashboard (Manager Only)
-
-Statistics cards showing total products, quantity, value, and low stock alerts with category breakdown.
-
-### Products List
-
-Searchable, filterable product table with edit/delete actions.
-
-## Author
-
-Built for assessment purposes.
+| Role             | Email            | Password    |
+| ---------------- | ---------------- | ----------- |
+| **Manager**      | manager@test.com | password123 |
+| **Store Keeper** | keeper@test.com  | password123 |
